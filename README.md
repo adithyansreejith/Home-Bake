@@ -34,7 +34,7 @@ As the name says it all, it a simple full stack project which is used for orderi
 - Now to run the project on your server type ``` npm start ``` .
 
 # Installation - More 
-- Install Node.js
+- In case of Errors
 - Open cmd
-- run  npm install simple-update-notifier@latest semver@latest
-- run  npm install nodemon@latest
+- Run  npm install simple-update-notifier@latest semver@latest
+- Run  npm install nodemon@latest
