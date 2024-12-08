@@ -63,7 +63,7 @@
                                 </span>
                             </a>
                             <div class="dropdown">
-                                <label><button onclick="myFunction()" class="header-username"
+                                <label><button onclick="myFunction()" class="header-username" type="button"
                                         style="color: #ff8243; padding: 4px 8px;"><b><i>
                                                 <%= username %>
                                             </i></b></button></label>
@@ -112,38 +112,28 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <% for(let i=0;i<items.length;i++) { %>
-                                                            <tr>
-                                                                <% count++ %>
+                                                        <% if (items && items.length > 0) { %>
+                                                            <% for (let i = 0; i < items.length; i++) { %>
+                                                                <tr>
+                                                                    <td><%= i + 1 %></td>
                                                                     <td>
-                                                                        <%= i+1 %>
+                                                                        <img src="/images/dish/<%= items[i].item_img %>" alt="<%= items[i].item_name %> Image"
+                                                                            style="border-radius: 10%; border: 2px solid rgb(68, 66, 66); box-shadow: 4px 4px 8px black;">
                                                                     </td>
-                                                                    <td><img src="/images/dish/<%= items[i].item_img %>"
-                                                                            alt=""
-                                                                            style="border-radius: 10%; border: 2px solid rgb(68, 66, 66) ; box-shadow: 4px 4px 8px black;">
-                                                                    </td>
+                                                                    <td><%= items[i].item_name %></td>
+                                                                    <td>₹ <span class="item-price"><%= items[i].item_price %></span></td>
                                                                     <td>
-                                                                        <%= items[i].item_name %>
+                                                                        <input type="number" class="quantity form-input" name="quantity_<%= i %>" id="quantity_<%= i %>"
+                                                                            value="1" min="0" onchange="updateData(this.value, '<%= i %>');" style="text-align: center;">
                                                                     </td>
-                                                                    <td>₹ <span class="item-price">
-                                                                            <%= items[i].item_price %>
-                                                                        </span></td>
-                                                                    <td><input type="number" style="text-align: center;"
-                                                                            placeholder="Qty"
-                                                                            class="quantity form-input" name="quantity"
-                                                                            id="quantity" value="1" min="0"
-                                                                            onchange="updateData(this.value,'<%= i %>');">
-                                                                    </td>
-                                                                    <td>₹ <span class="price">
-                                                                            <%= items[i].item_price %>
-                                                                        </span></td>
-                                                                    <input type="hidden" name="itemid"
-                                                                        value="<%= items[i].item_id %>">
-                                                                    <input type="hidden" name="subprice"
-                                                                        value="<%= items[i].item_price %>">
-                                                                    <% total_price +=items[i].item_price %>
-                                                            </tr>
+                                                                    <td>₹ <span class="price"><%= items[i].item_price %></span></td>
+                                                                </tr>
                                                             <% } %>
+                                                        <% } else { %>
+                                                            <tr>
+                                                                <td colspan="6" style="text-align: center;">No items in the cart</td>
+                                                            </tr>
+                                                        <% } %>
                                                     </tbody>
                                                     <tfoot>
                                                         <tr>
