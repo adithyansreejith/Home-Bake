@@ -47,16 +47,17 @@
                                 <span class="cart-number" id="cart-number-count">0</span>
                             </a>
                             <div class="dropdown">
-                                <label><button onclick="myFunction()" class="header-username"
-                                        style="color: #ff8243; padding: 4px 8px;"><b><i>
-                                                <%= username %>
-                                            </i></b></button></label>
-                                <div id="myDropdown" class="dropdown-content">
-                                    <a href="/myorders">My Orders</a>
-                                    <a href="/settings">Edit</a>
-                                    <a href="/logout">Sign Out</a>
-                                </div>
-                            </div>
+    <label>
+        <button onclick="myFunction()" class="header-username" type="button" style="color: #ff8243; padding: 4px 8px;">
+            <b><i><%= username %></i></b>
+        </button>
+    </label>
+    <div id="myDropdown" class="dropdown-content">
+        <a href="/myorders">My Orders</a>
+        <a href="/settings">Edit</a>
+        <a href="/logout">Sign Out</a>
+    </div>
+</div>
                         </div>
                     </div>
                 </div>
