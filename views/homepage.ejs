@@ -47,17 +47,16 @@
                                 <span class="cart-number" id="cart-number-count">0</span>
                             </a>
                             <div class="dropdown">
-    <label>
-        <button onclick="myFunction()" class="header-username" type="button" style="color: #ff8243; padding: 4px 8px;">
-            <b><i><%= username %></i></b>
-        </button>
-    </label>
-    <div id="myDropdown" class="dropdown-content">
-        <a href="/myorders">My Orders</a>
-        <a href="/settings">Edit</a>
-        <a href="/logout">Sign Out</a>
-    </div>
-</div>
+                                <label><button onclick="myFunction()" class="header-username"
+                                        style="color: #ff8243; padding: 4px 8px;"><b><i>
+                                                <%= username %>
+                                            </i></b></button></label>
+                                <div id="myDropdown" class="dropdown-content">
+                                    <a href="/myorders">My Orders</a>
+                                    <a href="/settings">Edit</a>
+                                    <a href="/logout">Sign Out</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -66,8 +65,7 @@
     </header>
     <!-- header ends  -->
 
-    <section style="background-image: url(assets/images/menu-bg.png);" class="our-menu section bg-light repeat-img"
-        id="menu">
+    <section style="background-image: url(assets/images/menu-bg.png);" class="our-menu section bg-light repeat-img" id="menu">
         <div class="sec-wp">
             <div class="container">
                 <div class="row">
@@ -87,8 +85,7 @@
                             <div class="menu-tab text-center">
                                 <ul class="filters">
                                     <div class="filter-active"></div>
-                                    <li class="filter"
-                                        data-filter=".all, .breakfast, .lunch, .dinner, .beverages, .desserts">
+                                    <li class="filter active" data-filter=".all, .breakfast, .lunch, .dinner, .beverages, .desserts">
                                         <img src="" alt="">
                                         All
                                     </li>
@@ -118,15 +115,12 @@
                     </div>
                 </div>
                 <div class="menu-list-row">
-                    <div class="row g-xxl-5 bydefault_show" id="menu-dish"
-                        style="background-image: url(/images/menu-bg.png);">
+                    <div class="row g-xxl-5 bydefault_show" id="menu-dish" style="background-image: url(/images/menu-bg.png);">
                         <% for(let i=0;i<items.length;i++) { %>
-                            <div class="col-lg-4 col-sm-6 dish-box-wp <%= items[i].item_category %>"
-                                data-cat="breakfast">
+                            <div class="col-lg-4 col-sm-6 dish-box-wp <%= items[i].item_category %> all" data-cat="breakfast">
                                 <div class="dish-box text-center">
                                     <div class="dist-img">
-                                        <img src="/images/dish/<%= items[i].item_img %>"
-                                            alt="<%= items[i].item_name %>">
+                                        <img src="/images/dish/<%= items[i].item_img %>" alt="<%= items[i].item_name %>">
                                     </div>
                                     <div class="dish-rating">
                                         <%= items[i].item_rating %>
@@ -162,8 +156,7 @@
                                                 <b>₹ <%= items[i].item_price %></b>
                                             </li>
                                             <li>
-                                                <button class="dish-add-btn" id="btn<%= items[i].item_id %>"
-                                                    onClick="addToCart(<%= items[i].item_id %>)">
+                                                <button class="dish-add-btn" id="btn<%= items[i].item_id %>" onClick="addToCart(<%= items[i].item_id %>)">
                                                     <i class="uil uil-plus"></i>
                                                 </button>
                                             </li>
@@ -288,5 +281,4 @@
     </div>
     </div>
 </body>
-
 </html>
